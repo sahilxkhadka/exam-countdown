@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,19 @@
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap');
+
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: 'Josefin Sans', sans-serif;
     }
+
     body {
-        height: 100vh;
+        min-height: 100vh;
         overflow: hidden;
         background-image: url("./Best-College-for-CSIT-in-Nepal.gif");
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         display: flex;
@@ -27,20 +30,24 @@
         justify-content: center;
         gap: 2rem;
     }
+
     h1 {
         color: rgb(252, 239, 239);
         font-size: 3rem;
         z-index: 2;
         text-align: center;
     }
+
     p {
         font-size: 5rem;
         font-weight: 700;
         color: rgb(252, 239, 239);
         z-index: 2;
-        min-width: 15ch;
         text-align: center;
+        text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 2px 2px 2px #14A73E;
+        letter-spacing: 2px;
     }
+
     body::before {
         content: "";
         height: 100%;
@@ -49,18 +56,49 @@
         offset: 0;
         background-color: #000;
         opacity: 0.7;
+        z-index: -1;
     }
-    button {
-        z-index: 2;
+    .button-88 {
+        display: flex;
+        align-items: center;
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding: 0.7em 1.4em 0.7em 1.1em;
+        color: white;
+        background: #ad5389;
+        background: linear-gradient(0deg, #14a73e 0%, rgba(102, 247, 113, 1) 100%);
+        border: none;
+        box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+        letter-spacing: 0.05em;
+        border-radius: 20em;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-88:hover {
+        box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+    }
+    .button-88:active {
+        box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+    }
+    @media screen and (max-width: 650px) {
+        html {
+            font-size: 50%;
+        }
     }
 </style>
+
 <body>
     <h1>B.Sc.CSIT II Semester Exam</h1>
     <p id="display"></p>
-    <button id="play-btn">Click</button>
+    <button id="play-btn" class="button-88">Play Music</button>
+
 </body>
 <script>
-    setInterval( function(){
+    setInterval(function () {
         let examDate = new Date("June 6, 2022 12:00:00").getTime()
         let currentDate = new Date().getTime()
         let differenceInDate = examDate - currentDate
@@ -69,8 +107,8 @@
         let minutesCount = Math.floor((differenceInDate % (1000 * 60 * 60)) / (1000 * 60))
         let secondsCount = Math.floor((differenceInDate % (1000 * 60)) / 1000)
         document.getElementById("display").innerText = `${daysCount}d ${hoursCount}h ${minutesCount}m ${secondsCount}s`
-    },1000 )
-    window.addEventListener("load", function() {
+    }, 1000)
+    document.getElementById("play-btn").addEventListener("click", function () {
         let music = new Audio("song.mp3")
         music.loop = true
         music.play()
