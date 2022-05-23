@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<body>
+    <h1>B.Sc.CSIT II Semester Exam</h1>
+    <p id="display"></p>
+    <button id="play-btn" class="button-88">Play Music</button>
+    <button id="pause-btn" class="button-88 hide">Pause Music</button>
+</body>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap');
 
@@ -16,14 +23,16 @@
         box-sizing: border-box;
         font-family: 'Josefin Sans', sans-serif;
     }
-
+    .hide {
+        display: none !important;
+    }
     body {
         min-height: 100vh;
         overflow: hidden;
         background-image: url("./Best-College-for-CSIT-in-Nepal.gif");
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: top;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -53,7 +62,8 @@
         height: 100%;
         width: 100%;
         position: absolute;
-        offset: 0;
+        top: 0;
+        left:0;
         background-color: #000;
         opacity: 0.7;
         z-index: -1;
@@ -88,15 +98,14 @@
         html {
             font-size: 50%;
         }
+        p {
+            text-shadow: none;
+        }
+    }
+    #pause-btn {
+        background-color: red;
     }
 </style>
-
-<body>
-    <h1>B.Sc.CSIT II Semester Exam</h1>
-    <p id="display"></p>
-    <button id="play-btn" class="button-88">Play Music</button>
-
-</body>
 <script>
     setInterval(function () {
         let examDate = new Date("June 6, 2022 12:00:00").getTime()
@@ -108,10 +117,23 @@
         let secondsCount = Math.floor((differenceInDate % (1000 * 60)) / 1000)
         document.getElementById("display").innerText = `${daysCount}d ${hoursCount}h ${minutesCount}m ${secondsCount}s`
     }, 1000)
-    document.getElementById("play-btn").addEventListener("click", function () {
-        let music = new Audio("song.mp3")
-        music.loop = true
+
+    const playBtn = document.getElementById("play-btn")
+    const pauseBtn = document.getElementById("pause-btn")
+    let music = new Audio("song.mp3")
+    music.loop = true
+
+    playBtn.addEventListener("click", function () {
         music.play()
+        toggleButtonView()
     })
+    pauseBtn.addEventListener("click", function() {
+        music.pause()
+        toggleButtonView()
+    })
+    function toggleButtonView() {
+        playBtn.classList.toggle("hide")
+        pauseBtn.classList.toggle("hide")
+    }
 </script>
 </html>
