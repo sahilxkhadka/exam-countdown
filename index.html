@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    body {
+        height: 100vh;
+        overflow: hidden;
+        background-image: url("./Best-College-for-CSIT-in-Nepal.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    h1 {
+        color: rgb(252, 239, 239);
+        font-size: 3rem;
+        z-index: 2;
+        text-align: center;
+    }
+    p {
+        font-size: 5rem;
+        font-weight: 700;
+        color: rgb(252, 239, 239);
+        z-index: 2;
+        min-width: 15ch;
+        text-align: center;
+    }
+    body::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        offset: 0;
+        background-color: #000;
+        opacity: 0.7;
+    }
+</style>
+<body>
+    <h1>B.Sc.CSIT II Semester Exam</h1>
+    <p id="display"></p>
+    <audio src="song.mp3" id = "music" loop = "loop" autoplay = "autoplay"></audio>
+</body>
+<script>
+    setInterval( function(){
+        let examDate = new Date("June 6, 2022 12:00:00").getTime()
+        console.log(examDate)
+        let currentDate = new Date().getTime()
+        let differenceInDate = examDate - currentDate
+    
+        let daysCount = Math.floor(differenceInDate / (60 * 24 * 60 * 1000))
+        let hoursCount = Math.floor((differenceInDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        let minutesCount = Math.floor((differenceInDate % (1000 * 60 * 60)) / (1000 * 60))
+        let secondsCount = Math.floor((differenceInDate % (1000 * 60)) / 1000)
+        document.getElementById("display").innerText = `${daysCount}d ${hoursCount}h ${minutesCount}m ${secondsCount}s`
+    },1000 )
+    window.onload = function() {
+        document.getElementById("music").play()
+    }
+</script>
+</html>
