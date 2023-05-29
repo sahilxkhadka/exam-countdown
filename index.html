@@ -2,144 +2,453 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board Exam</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Board Exam</title>
 </head>
 
 <body>
-    <h1>B.Sc.CSIT IV Semester Exam</h1>
-    <p id="display"></p>
-    <button id="play-btn" class="button-88">Play Music</button>
-    <button id="pause-btn" class="button-88 hide">Pause Music</button>
+  <h1>B.Sc.CSIT IV Semester</h1>
+  <h2 class="glitch" data-text="Exam Starts After">Exam Starts After</h2>
+  <p id="display"></p>
+  <button id="play-btn" class="button-88">Play Music</button>
+  <button id="pause-btn" class="button-88 hide">Pause Music</button>
 </body>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap');
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Josefin Sans', sans-serif;
-    }
-    .hide {
-        display: none !important;
-    }
-    body {
-        min-height: 100vh;
-        overflow: hidden;
-        background-image: url("./Best-College-for-CSIT-in-Nepal.gif");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+  }
 
-    h1 {
-        color: rgb(252, 239, 239);
-        font-size: 3rem;
-        z-index: 2;
-        text-align: center;
+  .hide {
+    display: none !important;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url("./Best-College-for-CSIT-in-Nepal.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  h1 {
+    color: rgb(252, 239, 239);
+    font-size: 3rem;
+    z-index: 2;
+    text-align: center;
+  }
+
+  p {
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgb(252, 239, 239);
+    z-index: 2;
+    text-align: center;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15), 2px 2px 2px #14A73E;
+    letter-spacing: 2px;
+  }
+
+  #display {
+    min-height: 120px;
+  }
+
+  body::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  .button-88 {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, #14a73e 0%, rgba(102, 247, 113, 1) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    min-width: 10ch;
+    text-align: center;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-88:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+  }
+
+  .button-88:active {
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+  }
+
+  @media screen and (max-width: 650px) {
+    html {
+      font-size: 50%;
     }
 
     p {
-        font-size: 5rem;
-        font-weight: 700;
-        color: rgb(252, 239, 239);
-        z-index: 2;
-        text-align: center;
-        text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 2px 2px 2px #14A73E;
-        letter-spacing: 2px;
+      text-shadow: none;
+    }
+  }
+
+  #pause-btn {
+    background-color: red;
+  }
+
+  .glitch {
+    position: relative;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgb(252, 239, 239);
+    z-index: 2;
+    text-align: center;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15), 2px 2px 2px #14A73E;
+    letter-spacing: 2px;
+  }
+
+  .glitch:before {
+    left: 0;
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s linear infinite alternate-reverse;
+  }
+
+  .glitch:after,
+  .glitch:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch:after {
+    left: 0;
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s linear infinite alternate-reverse;
+  }
+
+  @keyframes glitch-anim {
+    0% {
+      clip: rect(44px, 9999px, 36px, 0);
+      transform: skew(0.66deg);
     }
 
-    body::before {
-        content: "";
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left:0;
-        background-color: #000;
-        opacity: 0.7;
-        z-index: -1;
-    }
-    .button-88 {
-        display: flex;
-        align-items: center;
-        font-family: inherit;
-        font-weight: 600;
-        font-size: 1.5rem;
-        padding: 0.7em 1.4em 0.7em 1.1em;
-        color: white;
-        background: #ad5389;
-        background: linear-gradient(0deg, #14a73e 0%, rgba(102, 247, 113, 1) 100%);
-        border: none;
-        box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
-        letter-spacing: 0.05em;
-        border-radius: 20em;
-        cursor: pointer;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        min-width: 10ch;
-        text-align: center;
-        box-sizing: content-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    5% {
+      clip: rect(48px, 9999px, 10px, 0);
+      transform: skew(0.46deg);
     }
 
-    .button-88:hover {
-        box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+    10% {
+      clip: rect(54px, 9999px, 17px, 0);
+      transform: skew(0.56deg);
     }
-    .button-88:active {
-        box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+
+    15% {
+      clip: rect(56px, 9999px, 59px, 0);
+      transform: skew(0.32deg);
     }
-    @media screen and (max-width: 650px) {
-        html {
-            font-size: 50%;
-        }
-        p {
-            text-shadow: none;
-        }
+
+    20% {
+      clip: rect(93px, 9999px, 77px, 0);
+      transform: skew(0.86deg);
     }
-    #pause-btn {
-        background-color: red;
+
+    25% {
+      clip: rect(51px, 9999px, 96px, 0);
+      transform: skew(0.55deg);
     }
+
+    30% {
+      clip: rect(57px, 9999px, 85px, 0);
+      transform: skew(0.99deg);
+    }
+
+    35% {
+      clip: rect(21px, 9999px, 11px, 0);
+      transform: skew(0.45deg);
+    }
+
+    40% {
+      clip: rect(75px, 9999px, 54px, 0);
+      transform: skew(0.71deg);
+    }
+
+    45% {
+      clip: rect(20px, 9999px, 54px, 0);
+      transform: skew(0.11deg);
+    }
+
+    50% {
+      clip: rect(14px, 9999px, 18px, 0);
+      transform: skew(0.1deg);
+    }
+
+    55% {
+      clip: rect(52px, 9999px, 28px, 0);
+      transform: skew(0.1deg);
+    }
+
+    60% {
+      clip: rect(21px, 9999px, 2px, 0);
+      transform: skew(0.33deg);
+    }
+
+    65% {
+      clip: rect(11px, 9999px, 86px, 0);
+      transform: skew(0.71deg);
+    }
+
+    70% {
+      clip: rect(39px, 9999px, 74px, 0);
+      transform: skew(0.45deg);
+    }
+
+    75% {
+      clip: rect(43px, 9999px, 13px, 0);
+      transform: skew(0.58deg);
+    }
+
+    80% {
+      clip: rect(53px, 9999px, 56px, 0);
+      transform: skew(0.88deg);
+    }
+
+    85% {
+      clip: rect(70px, 9999px, 49px, 0);
+      transform: skew(0.21deg);
+    }
+
+    90% {
+      clip: rect(40px, 9999px, 25px, 0);
+      transform: skew(0.07deg);
+    }
+
+    95% {
+      clip: rect(81px, 9999px, 7px, 0);
+      transform: skew(0.61deg);
+    }
+
+    to {
+      clip: rect(74px, 9999px, 90px, 0);
+      transform: skew(0.88deg);
+    }
+  }
+
+  @keyframes glitch-anim2 {
+    0% {
+      clip: rect(71px, 9999px, 84px, 0);
+      transform: skew(0.2deg);
+    }
+
+    5% {
+      clip: rect(19px, 9999px, 94px, 0);
+      transform: skew(0.84deg);
+    }
+
+    10% {
+      clip: rect(93px, 9999px, 12px, 0);
+      transform: skew(0.18deg);
+    }
+
+    15% {
+      clip: rect(95px, 9999px, 91px, 0);
+      transform: skew(0.21deg);
+    }
+
+    20% {
+      clip: rect(80px, 9999px, 48px, 0);
+      transform: skew(0.03deg);
+    }
+
+    25% {
+      clip: rect(46px, 9999px, 44px, 0);
+      transform: skew(0.06deg);
+    }
+
+    30% {
+      clip: rect(28px, 9999px, 94px, 0);
+      transform: skew(0.58deg);
+    }
+
+    35% {
+      clip: rect(28px, 9999px, 4px, 0);
+      transform: skew(0.23deg);
+    }
+
+    40% {
+      clip: rect(37px, 9999px, 48px, 0);
+      transform: skew(0.77deg);
+    }
+
+    45% {
+      clip: rect(60px, 9999px, 69px, 0);
+      transform: skew(0.97deg);
+    }
+
+    50% {
+      clip: rect(36px, 9999px, 4px, 0);
+      transform: skew(0.81deg);
+    }
+
+    55% {
+      clip: rect(80px, 9999px, 90px, 0);
+      transform: skew(0.06deg);
+    }
+
+    60% {
+      clip: rect(7px, 9999px, 70px, 0);
+      transform: skew(0.4deg);
+    }
+
+    65% {
+      clip: rect(97px, 9999px, 12px, 0);
+      transform: skew(0.2deg);
+    }
+
+    70% {
+      clip: rect(14px, 9999px, 37px, 0);
+      transform: skew(0.22deg);
+    }
+
+    75% {
+      clip: rect(90px, 9999px, 42px, 0);
+      transform: skew(0.13deg);
+    }
+
+    80% {
+      clip: rect(83px, 9999px, 91px, 0);
+      transform: skew(0.07deg);
+    }
+
+    85% {
+      clip: rect(74px, 9999px, 11px, 0);
+      transform: skew(0.74deg);
+    }
+
+    90% {
+      clip: rect(84px, 9999px, 78px, 0);
+      transform: skew(0.94deg);
+    }
+
+    95% {
+      clip: rect(86px, 9999px, 1px, 0);
+      transform: skew(0.69deg);
+    }
+
+    to {
+      clip: rect(50px, 9999px, 7px, 0);
+      transform: skew(0.2deg);
+    }
+  }
+
+  @keyframes glitch-skew {
+    0% {
+      transform: skew(2deg);
+    }
+
+    10% {
+      transform: skew(-3deg);
+    }
+
+    20% {
+      transform: skew(5deg);
+    }
+
+    30% {
+      transform: skew(2deg);
+    }
+
+    40% {
+      transform: skew(-3deg);
+    }
+
+    50% {
+      transform: skew(-2deg);
+    }
+
+    60% {
+      transform: skew(5deg);
+    }
+
+    70% {
+      transform: skew(0deg);
+    }
+
+    80% {
+      transform: skew(-4deg);
+    }
+
+    90% {
+      transform: skew(1deg);
+    }
+
+    to {
+      transform: skew(0deg);
+    }
+  }
 </style>
 <script>
-    setInterval(function () {
-        let examDate = new Date("June 20, 2023 12:00:00").getTime()
-        let currentDate = new Date().getTime()
-        let differenceInDate = examDate - currentDate
-        let daysCount = Math.floor(differenceInDate / (60 * 24 * 60 * 1000))
-        let hoursCount = Math.floor((differenceInDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        let minutesCount = Math.floor((differenceInDate % (1000 * 60 * 60)) / (1000 * 60))
-        let secondsCount = Math.floor((differenceInDate % (1000 * 60)) / 1000)
-        document.getElementById("display").innerText = `${daysCount}d ${hoursCount}h ${minutesCount}m ${secondsCount}s`
-    }, 1000)
+  setInterval(function () {
+    let examDate = new Date("June 20, 2023 12:00:00").getTime()
+    let currentDate = new Date().getTime()
+    let differenceInDate = examDate - currentDate
+    let daysCount = Math.floor(differenceInDate / (60 * 24 * 60 * 1000))
+    let hoursCount = Math.floor((differenceInDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    let minutesCount = Math.floor((differenceInDate % (1000 * 60 * 60)) / (1000 * 60))
+    let secondsCount = Math.floor((differenceInDate % (1000 * 60)) / 1000)
+    document.getElementById("display").innerText = `${daysCount}d ${hoursCount}h ${minutesCount}m ${secondsCount}s`
+  }, 1000)
 
-    const playBtn = document.getElementById("play-btn")
-    const pauseBtn = document.getElementById("pause-btn")
-    let music = new Audio("song.mp3")
-    music.loop = true
+  const playBtn = document.getElementById("play-btn")
+  const pauseBtn = document.getElementById("pause-btn")
+  let music = new Audio("song.mp3")
+  music.loop = true
 
-    playBtn.addEventListener("click", function () {
-        music.play()
-        toggleButtonView()
-    })
-    pauseBtn.addEventListener("click", function() {
-        music.pause()
-        toggleButtonView()
-    })
-    function toggleButtonView() {
-        playBtn.classList.toggle("hide")
-        pauseBtn.classList.toggle("hide")
-    }
+  playBtn.addEventListener("click", function () {
+    music.play()
+    toggleButtonView()
+  })
+  pauseBtn.addEventListener("click", function () {
+    music.pause()
+    toggleButtonView()
+  })
+  function toggleButtonView() {
+    playBtn.classList.toggle("hide")
+    pauseBtn.classList.toggle("hide")
+  }
 </script>
+
 </html>
